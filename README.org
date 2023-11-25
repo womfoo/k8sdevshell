@@ -1,0 +1,5 @@
+test k3s devshell on nixos
+==========================
+
+* TODO automate install argocd crds
+kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds\?ref\=stable

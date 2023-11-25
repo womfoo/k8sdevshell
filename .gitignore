@@ -1,0 +1,13 @@
+# std
+.bin
+.cache
+.config
+.data
+.run
+
+#emacs
+*~
+\#*\#
+
+.terragrunt-cache
+.terraform.lock.hcl
