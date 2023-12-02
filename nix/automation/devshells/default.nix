@@ -18,6 +18,7 @@ in {
         package = nixpkgs.nixfmt;
       }
       { package = nixpkgs.jq; }
+      { package = cells.cd.packages.netrc2env; }
       {
         category = "kubernetes";
         package = cells.vendor.packages.k8split;
@@ -32,8 +33,9 @@ in {
       }
       {
         category = "terraform";
-        package = nixpkgs.terragrunt;
+        package = nixpkgs.hcl2json;
       }
+
     ];
   };
 }

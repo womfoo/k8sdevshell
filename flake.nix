@@ -21,6 +21,11 @@
     inputs.nixago-exts.follows = "";
   };
 
+  inputs.terranix = {
+    url = "github:terranix/terranix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   outputs = { std, self, ... }@inputs:
     std.growOn {
       inherit inputs;
@@ -29,6 +34,7 @@
         (devshells "devshells")
         (installables "packages")
         (kubectl "kubectl")
+        (terra "terra" "https://github.com/womfoo/k8sdevshell")
       ];
       nixpkgsConfig = { allowUnfree = true; };
     } {

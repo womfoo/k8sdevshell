@@ -8,5 +8,3 @@ std //vendor/kubectl/argocrds:apply
 #+END_SRC
 
 *** TODO terranix
-
-** terragrunt
