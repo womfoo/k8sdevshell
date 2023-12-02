@@ -1,5 +1,12 @@
-test k3s devshell on nixos
-==========================
+* k8s nix devshell
 
-* TODO automate install argocd crds
-kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds\?ref\=stable
+** Using [[https://std.divnix.com][Standard]]'s [[https://std.divnix.com/reference/blocktypes.html][blocktypes]] for fun and profit
+
+*** kubectl
+#+BEGIN_SRC bash
+std //vendor/kubectl/argocrds:apply
+#+END_SRC
+
+*** TODO terranix
+
+** terragrunt
