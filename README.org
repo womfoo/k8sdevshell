@@ -7,4 +7,9 @@
 std //vendor/kubectl/argocrds:apply
 #+END_SRC
 
-*** TODO terranix
+*** terra
+#+BEGIN_SRC bash
+std //cd/terra/helm_charts:init
+std //cd/terra/helm_charts:plan
+std //cd/terra/helm_charts:apply -- -auto-approve
+#+END_SRC
