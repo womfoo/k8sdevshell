@@ -34,7 +34,7 @@
         (devshells "devshells")
         (installables "packages")
         (kubectl "kubectl")
-        (terra "terra" "https://github.com/womfoo/k8sdevshell")
+        (terra "terra" "https://github.com/womfoo/k8sdevshell-state")
       ];
       nixpkgsConfig = { allowUnfree = true; };
     } {
