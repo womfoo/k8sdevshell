@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "argo": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-Jpwsu6ktQIwzbMOnqL0hx+sz5k8ARJO5D3fMIFfHPOk=",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml"
+      }
+    },
     "bats-assert": {
       "flake": false,
       "locked": {
@@ -225,11 +237,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1700856099,
-        "narHash": "sha256-RnEA7iJ36Ay9jI0WwP+/y4zjEhmeN6Cjs9VOFBH7eVQ=",
+        "lastModified": 1715316543,
+        "narHash": "sha256-4XOPcWmyH77Gd+cvVr2Hp7PHAlNAesvsLtHHbqy8xfA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bd59c54ef06bc34eca01e37d689f5e46b3fe2f1",
+        "rev": "c669412a552f31c45adad47894e7fd6a8698e53f",
         "type": "github"
       },
       "original": {
@@ -300,6 +312,7 @@
     },
     "root": {
       "inputs": {
+        "argo": "argo",
         "devshell": "devshell",
         "nixago": "nixago",
         "nixpkgs": "nixpkgs",

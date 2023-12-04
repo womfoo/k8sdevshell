@@ -26,6 +26,14 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  # FIXME: ff components fail when deploying namespace variant
+  # argocd-server
+  # argocd-applicationset-controller
+  # argocd-application-controller
+  # inputs.argo.url = "https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/namespace-install.yaml";
+  inputs.argo.url = "https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml";
+  inputs.argo.flake = false;
+
   outputs = { std, self, ... }@inputs:
     std.growOn {
       inherit inputs;

@@ -21,10 +21,6 @@ in {
       { package = nixpkgs.jq; }
       {
         category = "kubernetes";
-        package = cells.vendor.packages.k8split;
-      }
-      {
-        category = "kubernetes";
         package = nixpkgs.k9s;
       }
       {
