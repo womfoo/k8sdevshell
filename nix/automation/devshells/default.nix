@@ -7,6 +7,7 @@ in {
       nixpkgs.terraform-providers.helm
       nixpkgs.terraform-providers.kubectl
       nixpkgs.terraform-providers.kubernetes
+      cells.cd.packages.netrc2env
     ];
     commands = [
       {
@@ -18,7 +19,6 @@ in {
         package = nixpkgs.nixfmt;
       }
       { package = nixpkgs.jq; }
-      { package = cells.cd.packages.netrc2env; }
       {
         category = "kubernetes";
         package = cells.vendor.packages.k8split;
