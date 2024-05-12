@@ -1,10 +1,11 @@
 {
-  description = "local k3s shell";
+  description = "devshell for k3s on nixos";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
   inputs.std = {
     url = "github:divnix/std";
+    # url = "git+file:///home/kranium/git/github.com/divnix/std";
     inputs.nixpkgs.follows = "nixpkgs";
     inputs.devshell.follows = "devshell";
     inputs.nixago.follows = "nixago";
@@ -34,7 +35,11 @@
   inputs.argo.url = "https://raw.githubusercontent.com/argoproj/argo-cd/v2.11.0/manifests/install.yaml";
   inputs.argo.flake = false;
 
-  outputs = { std, self, ... }@inputs:
+  outputs = {
+    std,
+    self,
+    ...
+  } @ inputs:
     std.growOn {
       inherit inputs;
       cellsFrom = ./nix;
@@ -42,10 +47,11 @@
         (devshells "devshells")
         (installables "packages")
         (kubectl "kubectl")
-        (terra "terra" "https://github.com/womfoo/k8sdevshell-state")
+        (terra "terra" "ssh:kranium@git.gikos.net:/srv/git/k3s-tf-state")
+        # (terra "terra" "https://github.com/womfoo/k8sdevshell-state")
       ];
-      nixpkgsConfig = { allowUnfree = true; };
+      nixpkgsConfig = {allowUnfree = true;};
     } {
-      devShells = inputs.std.harvest inputs.self [ "automation" "devshells" ];
+      devShells = inputs.std.harvest inputs.self ["automation" "devshells"];
     };
 }

@@ -1,8 +1,10 @@
-{ pkgs, ruby, writeScriptBin }:
-
-let
-  ruby' = ruby.withPackages (ps: with ps; [ netrc ]);
-  prog = pkgs.writeText "users-groups.json" ''
+{
+  pkgs,
+  ruby,
+  writeScriptBin,
+}: let
+  ruby' = ruby.withPackages (ps: with ps; [netrc]);
+  prog = pkgs.writeText "netrc-to-github-envs" ''
     require 'netrc'
 
     netrc = Netrc.read
@@ -17,6 +19,7 @@ let
     puts "export GIT_USERNAME=#{github_username}"
     puts "export GITHUB_TOKEN=#{github_token}"
   '';
-in writeScriptBin "netrc2env" ''
-  exec ${ruby'}/bin/ruby ${prog}
-''
+in
+  writeScriptBin "netrc2githubenv" ''
+    exec ${ruby'}/bin/ruby ${prog}
+  ''

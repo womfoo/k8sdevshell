@@ -11,3 +11,6 @@
 
 .terragrunt-cache
 .terraform.lock.hcl
+# nixago: ignore-linked-files
+/lefthook.yml
+/treefmt.toml

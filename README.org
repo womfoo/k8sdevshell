@@ -1,6 +1,4 @@
-* k8s nix devshell
-
-** Using [[https://std.divnix.com][Standard]]'s [[https://std.divnix.com/reference/blocktypes.html][blocktypes]] for fun and profit
+* devshell for k3s on nixos
 
 *** terra
 #+BEGIN_SRC bash
